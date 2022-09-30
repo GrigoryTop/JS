@@ -26,7 +26,7 @@ else {
 		h -= alph[i]*Math.log(alph[i]);
 	}
 	h /= Math.log(n)
-	console.log(h)
+	console.log('Энтропия =',h)
 }
 
 
