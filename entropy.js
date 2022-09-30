@@ -1,3 +1,7 @@
+/*Топычканов Григорий КНМО-101
+Расчет энтропии Шеннона
+На входе текст, на выходе число(энтропия) */
+
 const fs = require('fs');
 let str = fs.readFileSync('./input.txt', 'utf-8');
 let alph = new Array();
