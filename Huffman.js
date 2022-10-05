@@ -54,3 +54,33 @@ function assignCode(node,pat)  { //Строим по дереву коды си�
 assignCode(Tree,pat);  
 
 console.log(code); //Итоговые коды символов
+
+let array_code = new Array;
+for (i in code) {
+	array_code.push([i, code[i]]);
+}
+
+let result = ''
+for (i = 0; i<inpStr.length; i++){  //кодирование входящей строки
+	for (j in array_code){
+		if (inpStr[i]==array_code[j][0]){
+		result += array_code[j][1]; }
+	}
+}
+console.log(result);   //итоговая закодированная строка
+
+
+
+let decodStr= '';
+let decoder = '';
+for (i =0; i < result.length; i++){
+	decoder += result[i];
+	for (j in array_code){
+		if (decoder == array_code[j][1]){
+			decodStr += array_code[j][0];
+			decoder = '';
+		}
+	}
+}
+
+console.log(decodStr); //декодированная обратно строка
