@@ -1,0 +1,101 @@
+// created by Topychkanov Grigory KNMO-101
+
+<html>
+<head>
+	<title>Hamming code</title>
+	<script>
+	function code(){
+		let mes = document.getElementById('inputMessage').value;
+		let a = Number(mes[0]);
+		let b = Number(mes[1]);
+		let c = Number(mes[2]);
+		let d = Number(mes[3]);
+		
+		if ((a+b+d)%2==0)
+			mes += '0';
+		else
+			mes += '1';
+		if ((b+c+d)%2==0)
+			mes += '0';
+		else
+			mes += '1';
+		if ((a+c+d)%2==0)
+			mes += '0';
+		else
+			mes += '1'; //получение строки с контрольными битами
+		document.getElementById('codedMessage').value = mes; //закодированная строка
+		
+		function getRandomInt(max){
+			return Math.floor(Math.random()*max);
+		}
+		let r = getRandomInt(7);
+		let errMes = mes.slice(0,r) + String((Number(mes[r])+1)%2) + mes.slice(r+1, mes.lenght);//случайный выбор жертвы молнии
+		
+		document.getElementById('errMessage').value = errMes;
+	}
+	function decode(){
+		let errMes = document.getElementById('errMessage').value;
+		let a1 = Number(errMes[0]);
+		let b1 = Number(errMes[1]);
+		let c1 = Number(errMes[2]);
+		let d1 = Number(errMes[3]);
+		let e1 = Number(errMes[4]);
+		let f1 = Number(errMes[5]);
+		let g1 = Number(errMes[6]);
+		let flag1 = flag2 = flag3 = lastflag= 0;
+		let errMes2 = errMes;
+		
+		if ((a1+b1+d1+e1)%2!=0)
+			flag1 = 1;
+		if ((b1+c1+d1+f1)%2!=0)     
+			flag2 = 1;
+		if ((a1+c1+d1+g1)%2!=0)
+			flag3 = 1;
+		
+		let err = 0;
+		let decodMes = '';
+		if (flag1==1 && flag2==1 && flag3==1){//поиск и устранение ошибки
+			decodMes = errMes.slice(0,3)+String((d1+1)%2)+errMes.slice(4,errMes.lenght);
+			lastflag = 1;
+			err = 4;
+		} else {
+			if (flag1==1 && flag2==1){
+				lastflag = 1;
+				err = 2;
+				decodMes = errMes[0]+String((b1+1)%2)+errMes.slice(2,errMes.lenght);
+			} if (flag2==1 && flag3==1){
+				lastflag = 1;
+				err = 3;
+				decodMes = errMes.slice(0,2)+String((c1+1)%2)+errMes.slice(3,errMes.lenght);
+			} if (flag1==1 && flag3==1){
+				lastflag = 1;
+				err = 1;
+				decodMes = String((a1+1)%2)+errMes.slice(1,errMes.lenght);
+			}}
+			
+		if (lastflag == 0){
+			if (flag1==1)
+				decodMes = errMes.slice(0,4)+String((e1+1)%2)+errMes.slice(5,errMes.lenght);
+			if (flag2==1)
+				decodMes = errMes.slice(0,5)+String((f1+1)%2)+errMes.slice(6,errMes.lenght);
+			if (flag3==1)
+				decodMes = errMes.slice(0,6)+String((g1+1)%2);
+			err = 'error in control bit'
+		}
+		
+		document.getElementById('originalMessage').value = decodMes .slice(0, 4);
+		document.getElementById('errNumber').value = err;
+	}
+	</script>
+</head>
+<body>
+	<h1>My Hamming Code</h1>
+	<p><input type='text' id='inputMessage'/> four bites</p>
+	<p><input type='button' value='To code' onClick='code()'/></p>
+	<p><input type='text' id='codedMessage'/> encoded message </p>
+	<p><input type='text' id='errMessage'/> message after lightning</p>
+	<p><input type='button' value='To decode' onClick='decode()'/></p>
+	<p><input type='text' id='originalMessage'/> original message </p>
+	<p><input type='text' id='errNumber'/> the sequence number of erroneous symbol </p>
+</body>
+</html>
