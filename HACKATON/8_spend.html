@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title> Управление инвестициями </title>
+		<link href='style/4_style.css' rel='stylesheet' type='text/css'>
+        <script src="scripts/scriptForBRS.js"></script>
+	
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+	</head>
+	<body>
+        <h2> Поможем собрать Ваш лучший инвестиционный портфель </h2>
+		<hr>
+		
+        <p class="firstP"> Какую часть доходов Вы тратите?</p>
+
+        <input class="form-control" type="text" name="input_text1" id="input_text1" min="10" max="100" placeholder='Процент от дохода' onchange="rangeinput1.value = input_text1.value" /><br>
+        <input class="slider" type="range" oninput="input_text1.value = rangeinput1.value"  type="range" min="10" max="100"  id="rangeinput1" step="5" onchange="input_text1.value = rangeinput1.value" >
+        
+        <div class="percent">
+            <p class="left_percent">10%
+                <span class="right_percent"> 100% </span>
+            </p>
+        </div>
+        
+
+        <a class="link" href="7_time.html"> << Назад </a>
+		<a href="9_money.html" class="link"> Следующий вопрос >> </a>
+    </body>
+</html>
