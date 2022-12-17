@@ -1,0 +1,88 @@
+html {
+	background: 
+		linear-gradient(217deg, #b4e9fd, #dfceff),
+		linear-gradient(127deg, #a6bfff, #C1C8E4),
+		linear-gradient(336deg, #92d5f7, #ccb8f1);	
+}
+
+body {
+	text-align: center;
+	font-size: 30px;
+	font-family: 'Montserrat', sans-serif;
+
+	margin: 20px;
+	padding: 0px 50px 50px 50px;
+	
+	width: 50%;
+	margin: 50px auto;
+
+	border: 2px solid black;
+	border-radius: 25px;
+
+	background: linear-gradient(80deg, #5AB9EA, #8860D0);
+}
+
+h2 {
+	padding: 0px 0;
+	text-align: center;
+	color: #000;
+	font-weight: 900;
+}
+
+
+.firstP, .testP {
+	color:#000;
+	font-weight: 600;
+	padding-top: 50px;
+}
+
+p {
+	color:#000;
+	font-weight: 600;
+}
+.result {
+	text-decoration: none;
+	margin: 15px;
+	padding: 12px 12px;
+	font-size: 17px;
+
+	width: 350px;
+	border: 2px solid #000;
+	border-radius: 12px;
+	color: #000;
+	background-color: #FFF;
+	background-size: 50px 50px;
+}
+
+.passport {
+	text-decoration: none;
+	margin: 15px;
+	padding: 12px 12px;
+	font-size: 15px;
+
+	width: 200px;
+	border: 2px solid #000;
+	border-radius: 12px;
+	color: #000;
+	background-color: #FFF;
+	background-size: 50px 50px;
+}
+
+.link {
+	text-decoration: none;
+	margin: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 15px;
+
+	font-size: 20px;
+	font-weight: 700;
+
+	border: 3px solid #d9c5ff;
+	border-radius: 12px;
+	color: #d9c5ff;
+	background-color: #000;
+	background-size: 50px 50px;
+}
+
+

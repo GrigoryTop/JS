@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title> Управление инвестициями </title>
+		<link href='style/4_style.css' rel='stylesheet' type='text/css'>
+        <script src="scripts/scriptForBRS.js"></script>
+	
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+	</head>
+	<body>
+        <h2> Поможем собрать Ваш лучший инвестиционный портфель </h2>
+		<hr>
+		
+        <p class="firstP"> Какова Ваша сумма сбережений? </p>
+
+        <input class="form-control" type="text" name="input_text1" id="input_text1" min="0" max="1000000" placeholder='Сумма в тысячах рублей' onchange="rangeinput1.value = input_text1.value" /><br>
+        <input class="slider" type="range" oninput="input_text1.value = rangeinput1.value"  type="range" min="0" max="1000000"  id="rangeinput1" step="1000" onchange="input_text1.value = rangeinput1.value" >
+        
+        <div class="percent">
+            <p class="left_percent"> нет сбережений
+                <span class="right_percent"> более миллиона </span>
+            </p>
+        </div>
+        
+
+        <a class="link" href="9_money.html"> << Назад </a>
+		<a href="11_obligations.html" class="link"> Следующий вопрос >> </a>
+    </body>
+</html>
