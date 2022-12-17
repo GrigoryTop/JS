@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title> Управление инвестициями </title>
+		<link href='style/4_style.css' rel='stylesheet' type='text/css'>
+		<script src="scripts/scriptForBRS.js"></script>
+	
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+
+	</head>
+	<body>
+        <h2> Поможем собрать Ваш лучший инвестиционный портфель </h2>
+		<hr>
+		
+        <p class="firstP"> На какой срок Вы готовы вложить деньги?</p>
+            <div class="input-group ">
+                <input class="form-control" type="text" name="input_text1" id="input_text1" min="1" max="20" placeholder='Количество лет' onchange="rangeinput1.value = input_text1.value" /><br>
+                <input class="slider" type="range" oninput="input_text1.value = rangeinput1.value"  type="range" min="1" max="20"  id="rangeinput1" step="1" onchange="input_text1.value = rangeinput1.value" >
+                <p></p>
+            </div>
+		
+		<a class="link" href="6_skills.html"> << Назад </a>
+		<a href="8_spend.html" class="link"> Следующий вопрос >> </a>
+    </body>
+</html>
